@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+
+        <script src="https://cdn.rawgit.com/mrdoob/three.js/r84/build/three.js"></script>
+
+        <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+        <script src="https://cdn.rawgit.com/oscarmarinmiro/aframe-stereo-component/80eaacd5/dist/aframe-stereo-component.js"></script>
+
+	</head>
+
+	<body>
+		<a-scene altspace antialias="true">
+			<a-assets>
+				<img id="left" src="https://cdn.rawgit.com/Winrur/stereo-test/1772956b/left.jpg">
+        		<img id="right" src="https://cdn.rawgit.com/Winrur/stereo-test/1772956b/right.jpg">
+			</a-assets>
+
+			<!-- Camera -->
+      		<a-entity camera look-controls position="0 0 0" stereocam="eye:left;"></a-entity>
+
+      		<!-- Sky sphere -->
+      		<a-sky id="sky1" src="#left" stereo="eye:left"></a-sky>
+      		<a-sky id="sky2" src="#right" stereo="eye:right"></a-sky>
+
+		</a-scene>
+	</body>
+</html>
